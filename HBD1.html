@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Ulang Tahun Najwa!</title>
+    <style>
+        body {
+            font-family: 'Arial Bold', sans-serif;
+            background: linear-gradient(135deg, #98FF98, #556B2F);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .container.active {
+            display: flex;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #F5F5DC;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+        button {
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff4a3d;
+        }
+        .decorative {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .decorative:nth-child(1) {
+            top: -50px;
+            left: -50px;
+			width: 170px;
+            height: 170px;
+            animation-delay: 0s;
+        }
+        .decorative:nth-child(2) {
+            bottom: -50px;
+            right: -50px;
+			width: 125px;
+            height: 125px;
+            animation-delay: 2s;
+        }
+        .decorative:nth-child(3) {
+            bottom : 65%;
+            right: -35px;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container active" id="part1">
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <h1>Selamat Ulang Tahun, Najwa!</h1>
+        <button onclick="showNext('part2')">Next</button>
+    </div>
+
+    <div class="container" id="part2">
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <h1>Pesan untuk Najwa</h1>
+        <p>Gw merasa benar benar beruntung bisa mengenal lu. Terimakasih sebesar besarnya untuk segala hal yang udah kasih dan tunjukkan ke gw. Gw juga mau minta maaf buat segala hal dari gw yang mungkin kurang mengenakkan ke elu. Semoga tahun ini (atau tahun depan) akan datang membawa segala harapan dan keinginan lu menjadi kenyataan. Happy birthday!! Semoga di tiap langkah lu kedepannya isinya dilebihin buat happy happynya and less sad. I'll do my very best to support you. I love U :></p>
+		
+        <!--<textarea placeholder="Pesanmu untuk Najwa..." rows="6" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>--> 
+		
+        <button onclick="showNext('part3')">Next</button>
+    </div>
+
+    <div class="container" id="part3">
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <div class="decorative"></div>
+        <h1>Penutup</h1>
+        <p>Dari temanmu Robby, wishing you the best for the next year!</p>
+        <button onclick="showNext('part1')">Kembali ke Awal</button>
+    </div>
+
+    <script>
+        function showNext(partId) {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => container.classList.remove('active'));
+            document.getElementById(partId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
